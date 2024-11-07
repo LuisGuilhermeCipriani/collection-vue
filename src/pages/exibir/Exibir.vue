@@ -24,7 +24,7 @@
                     <td>{{ cd.ano }}</td>
                     <td>{{ cd.descricao }}</td>
                     <td>
-                        <img :src="obtemUrlImagem(cd.imagem)" alt="Imagem do CD" />
+                        <img :src="obtemUrlImagem(cd.imagem)" alt="Imagem do CD"/>
                     </td>
                     <td>
                         <button class="editar" @click="abrirModalEditar(cd)">Editar</button>
@@ -213,27 +213,44 @@ export default {
 </script>
 
 <style scoped>
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
 .table-container {
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    text-align: center;
+    flex-direction: column;
 }
 
 table {
     width: 100%;
+    max-width: 1450px;
     border-collapse: collapse;
     table-layout: fixed;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 table img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
+    border: 1px solid #ffffff;
 }
 
 th,
 td {
     border: 1px solid #ccc;
     padding: 10px;
-    text-align: left;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 thead {
@@ -305,6 +322,7 @@ thead {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: #ffffff;
 }
 
 .upload {
@@ -481,6 +499,47 @@ input {
     100% {
         transform: rotate(360deg);
     }
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 15%; /* Título */
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 10%; /* Artista */
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 5%; /* Código */
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 5%; /* Gênero */
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    width: 5%; /* Ano */
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+    width: 40%; /* Descrição */
+    text-align: justify;
+}
+
+th:nth-child(7),
+td:nth-child(7) {
+    width: 5%; /* Imagem */
+}
+
+th:nth-child(8),
+td:nth-child(8) {
+    width: 15%; /* Ações */
 }
 
 </style>

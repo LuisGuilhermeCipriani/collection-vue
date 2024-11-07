@@ -14,6 +14,7 @@ export const opcoesGeneros = [
     { value: 'Jazz', text: 'Jazz' },
     { value: 'Pagode', text: 'Pagode' },
     { value: 'Pop', text: 'Pop' },
+    { value: 'Rock', text: 'Rock' },
     { value: 'Samba', text: 'Samba' },
     { value: 'Sertanejo', text: 'Sertanejo' },
     { value: 'Soul', text: 'Soul' },
